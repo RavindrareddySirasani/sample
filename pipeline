@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    
+
+    stages {
+        stage('git checkout') {
+            steps {
+                echo 'fetch code successfully'
+            }
+        }
+        stage('build') {
+            steps {
+                echo 'build successfully'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test successfully'
+            }
+        }
+        stage('input') {
+            
+            steps {
+                input('do you want to continue?')
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploy successfully'
+            }
+        }
+    }
+}
